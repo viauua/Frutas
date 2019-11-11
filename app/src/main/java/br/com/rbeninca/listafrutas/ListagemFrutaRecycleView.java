@@ -1,9 +1,11 @@
 package br.com.rbeninca.listafrutas;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.LinearLayout;
 
 public class ListagemFrutaRecycleView extends AppCompatActivity {
     RecyclerView recyclerView ;
@@ -16,19 +18,22 @@ public class ListagemFrutaRecycleView extends AppCompatActivity {
         recyclerView=findViewById(R.id.recyclerView);
         //Configurações RecyclerView
 
+        recyclerView.setHasFixedSize(true);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+
         FrutaController frutaController = new FrutaController();
 
         FrutaAdapterRecyclerView frutaAdapterRecyclerView = new FrutaAdapterRecyclerView(
                 getApplicationContext(),
                 R.layout.template_item_fruta,
                 frutaController.FRUTAS
-        )
+        );
 
 
-
-
-
-        recyclerView.setAdapter();
+        recyclerView.setAdapter(frutaAdapterRecyclerView);
 
 
 

@@ -2,29 +2,40 @@ package br.com.rbeninca.listafrutas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView listView;
+    Button buttonLV,buttonRV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView=findViewById(R.id.listView);
+        buttonLV=findViewById(R.id.buttonLV);
+        buttonRV=findViewById(R.id.buttonRV);
 
-        FrutaController frutaController = new FrutaController();
+        buttonLV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),ListagemFrutaListView.class);
+                startActivity(intent);
+            }
+        });
 
-        FrutaAdapter  frutaAdapter =new FrutaAdapter(
-                getApplicationContext(),
-                R.layout.template_item_fruta,
-                frutaController.FRUTAS
-                );
+        buttonRV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),ListagemFrutasRecyclerView.class);
+                startActivity(intent);
+            }
+        });
 
-        listView.setAdapter(frutaAdapter);
 
     }
 }

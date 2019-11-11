@@ -16,25 +16,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        buttonLV=findViewById(R.id.buttonLV);
-        buttonRV=findViewById(R.id.buttonRV);
+        buttonLV= findViewById(R.id.buttonLV);
 
         buttonLV.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ListagemFrutaListView.class);
+            public void onClick(View view) {
+                Intent intent =new Intent(
+                        getApplicationContext(),
+                        ListagemFrutaListView.class);
+                startActivity(intent);
+
+            }
+        });
+
+        buttonRV =findViewById(R.id.buttonRV);
+        buttonRV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(),
+                        ListagemFrutaRecycleView.class
+                        );
                 startActivity(intent);
             }
         });
 
-        buttonRV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ListagemFrutasRecyclerView.class);
-                startActivity(intent);
-            }
-        });
+
 
 
     }

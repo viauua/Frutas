@@ -6,12 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <Button
         android:id="@+id/buttonLV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Frutas ListView "
+        android:text="Listagem Fruta ListView"
         app:layout_constraintBottom_toTopOf="@+id/buttonRV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -22,7 +21,7 @@
         android:id="@+id/buttonRV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Frutas RecyclerView "
+        android:text="Listagem Fruta RecycleView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

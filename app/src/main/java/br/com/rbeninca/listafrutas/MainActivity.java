@@ -24,5 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 frutaController.FRUTAS
                 );
 
+        listView.setAdapter(frutaAdapter);
+
     }
 }

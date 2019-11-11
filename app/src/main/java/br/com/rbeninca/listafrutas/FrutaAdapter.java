@@ -12,14 +12,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.zip.Inflater;
 
 public class FrutaAdapter  extends ArrayAdapter<Fruta> {
 
     Context mContext;
     int mResource;
-    public FrutaAdapter(@NonNull Context context, int resource, int textViewResourceId, @NonNull Fruta[] objects) {
-        super(context, resource, textViewResourceId, objects);
+    public FrutaAdapter(@NonNull Context context, int resource, @NonNull Fruta[] objects) {
+        super(context, resource,  objects);
         mContext=context;
         mResource=resource;
     }
@@ -33,11 +35,27 @@ public class FrutaAdapter  extends ArrayAdapter<Fruta> {
         convertView = layoutInflater.inflate(mResource,parent,false);
 
         //Associando elementos da view inflada a váriaveis locais
-        TextView tvCodigo = (TextView) convertView.findViewById(R.id.codigo);
-        TextView tvNome = (TextView) convertView.findViewById(R.id.nome);
-        TextView tvPreco =  (TextView) convertView.findViewById(R.id.preco);
-        TextView tvPrecoVenda =(TextView) convertView.findViewById(R.id.preco_venda);
-        ImageView imgView = (ImageView) convertView.findViewById(R.id.imageView)
+        TextView tvCodigo = (TextView) convertView.findViewById(R.id.tvCodigo);
+        TextView tvNome = (TextView) convertView.findViewById(R.id.tvNome);
+        TextView tvPreco =  (TextView) convertView.findViewById(R.id.tvPreco);
+        TextView tvPrecoVenda =(TextView) convertView.findViewById(R.id.tvPrecoVenda);
+        ImageView imgView = (ImageView) convertView.findViewById(R.id.imageView);
+
+
+        //Recuperando objeto com dados na posição da coleção
+        Fruta fruta = getItem(position);
+
+        // Populando item da view
+
+
+        NumberFormat nf = new DecimalFormat("#,###.00");
+
+        tvCodigo.setText(Integer.toString(fruta.getCodigo()));
+        tvNome.setText(fruta.getNome());
+        tvPreco.setText(nf.format (fruta.getPreco()));
+        tvPrecoVenda.setText(nf.format (fruta.getPreco_venda()));
+        imgView.setImageResource(fruta.getImagem());
+
 
         return convertView;
     }

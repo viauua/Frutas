@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListagemFrutaListView"></activity>
+        <activity android:name=".ListagemFrutasListView"></activity>
         <activity android:name=".ListagemFrutasRecyclerView" />
         <activity android:name=".MainActivity">
             <intent-filter>

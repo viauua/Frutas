@@ -16,13 +16,13 @@ public class ListagemFrutaListView extends AppCompatActivity {
 
         FrutaController frutaController = new FrutaController();
 
-        FrutaAdapter  frutaAdapter =new FrutaAdapter(
+        FrutaAdapterListView frutaAdapterListView =new FrutaAdapterListView(
                 getApplicationContext(),
                 R.layout.template_item_fruta,
                 frutaController.FRUTAS
         );
 
-        listView.setAdapter(frutaAdapter);
+        listView.setAdapter(frutaAdapterListView);
 
 
     }

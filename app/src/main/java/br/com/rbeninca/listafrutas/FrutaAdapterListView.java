@@ -16,11 +16,11 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.zip.Inflater;
 
-public class FrutaAdapter  extends ArrayAdapter<Fruta> {
+public class FrutaAdapterListView extends ArrayAdapter<Fruta> {
 
     Context mContext;
     int mResource;
-    public FrutaAdapter(@NonNull Context context, int resource, @NonNull Fruta[] objects) {
+    public FrutaAdapterListView(@NonNull Context context, int resource, @NonNull Fruta[] objects) {
         super(context, resource,  objects);
         mContext=context;
         mResource=resource;

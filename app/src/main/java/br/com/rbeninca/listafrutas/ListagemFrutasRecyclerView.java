@@ -16,7 +16,7 @@ public class ListagemFrutasRecyclerView extends AppCompatActivity {
 
         recyclerView=findViewById(R.id.recylerView);
 
-        //configurando recycler view.
+        //Configurando RecyclerView.
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this); //new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);

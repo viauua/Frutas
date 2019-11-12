@@ -14,17 +14,28 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
+/* A classe Adapter deve extender de RecyclerView.Adapater, ou seja uma adapter especial para o recyclerView.
+    Esse adapter deve receber a especificação do tipo de conteúdo que ele ira manusear, em quanto no ListView cada
+    item é tratado diretametne como uma view, no RecyclerView cada item é uma view mas fica encapsulado em uma
+    view holder, que é um envólucro em que contém a view de cada item.
+    Estas ViewHolders são instânciadas e cada uma contém uma view de um item da listagem, entretanto diferente do
+    ListView as o RecyclerView instancia apenas o número de VH necessárias para pre encher a tela, fazendo com que
+    ao navegar na lista as Holders já instanciadas tenham seus dados substituidos pelo metódo OnBindViewHolder.
+* */
 public class FrutaAdapterRecyclerView extends RecyclerView.Adapter<FrutaAdapterRecyclerView.MyViewHolder>{
     Context mContext;
     int mResource;
     Fruta[] mDataset;
-
+    /*Metódo construtod da classe Adapter, ele recebera como parametros o contexto o layout e também
+    * a coleção de objetos com dados. Para que possamos acessar estes dados associamos as referencias
+    * destes parametros recebidos para atributos locais*/
     public FrutaAdapterRecyclerView(Context context, int resource, Fruta[] dataSet) {
         super();
         mContext = context;
         mResource = resource;
         mDataset = dataSet;
     }
+
 
     @NonNull
     @Override
@@ -53,7 +64,9 @@ public class FrutaAdapterRecyclerView extends RecyclerView.Adapter<FrutaAdapterR
 
 
 
-
+/*
+    Declaração da classe MyViewHolder que será  envolúcro para views de cada item da listagem.
+ */
     public  class MyViewHolder extends  RecyclerView.ViewHolder{
         TextView tvCodigo ;
         TextView tvNome ;

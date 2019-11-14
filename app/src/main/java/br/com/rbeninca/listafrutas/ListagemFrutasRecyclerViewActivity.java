@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 
-public class ListagemFrutasRecyclerView extends AppCompatActivity {
+public class ListagemFrutasRecyclerViewActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     FrutaController frutaController;
     @Override

@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         buttonLV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ListagemFrutasListView.class);
+                Intent intent = new Intent(getApplicationContext(), ListagemFrutasListViewActivity.class);
                 startActivity(intent);
             }
         });
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         buttonRV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ListagemFrutasRecyclerView.class);
+                Intent intent = new Intent(getApplicationContext(), ListagemFrutasRecyclerViewActivity.class);
                 startActivity(intent);
             }
         });

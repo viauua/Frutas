@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ExibeFrutaActivity"></activity>
-        <activity android:name=".ListagemFrutasListView" />
-        <activity android:name=".ListagemFrutasRecyclerView" />
+        <activity android:name=".ListagemFrutasListViewActivity" />
+        <activity android:name=".ListagemFrutasRecyclerViewActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
-public class ListagemFrutasListView extends AppCompatActivity {
+public class ListagemFrutasListViewActivity extends AppCompatActivity {
     ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

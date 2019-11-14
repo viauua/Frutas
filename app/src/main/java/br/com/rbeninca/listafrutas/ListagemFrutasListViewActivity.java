@@ -14,7 +14,9 @@ public class ListagemFrutasListViewActivity extends AppCompatActivity {
 
         listView=findViewById(R.id.listView);
 
+        FrutaController frutaController = new FrutaController();
+        FrutaAdapterListView adapter = new FrutaAdapterListView(getApplicationContext(),R.layout.template_item_fruta,frutaController.FRUTAS);
 
-
+        listView.setAdapter();
     }
 }
